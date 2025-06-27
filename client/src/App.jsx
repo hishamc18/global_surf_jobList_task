@@ -14,7 +14,7 @@ const AppRoutes = () => {
   const location = useLocation();
 
 useEffect(() => {
-  const isPublic = ["/login", "/register"].includes(location.pathname);
+  const isPublic = ["/", "/login", "/register"].includes(location.pathname);
 
   if (!isPublic) {
     dispatch(loadUser());
