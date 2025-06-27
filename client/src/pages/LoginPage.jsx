@@ -25,12 +25,6 @@ const LoginPage = () => {
 
     return (
         <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-white">
-            {loading && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-                    <LoadingDots />
-                </div>
-            )}
-
             {/* Left Side */}
             <div className="hidden lg:flex items-center justify-center px-12">
                 <div className="max-w-xl space-y-6">
@@ -114,7 +108,7 @@ const LoginPage = () => {
 
                     {/* Submit Button */}
                     <Button type="submit" className="w-full bg-black text-white hover:bg-neutral-800">
-                        Login
+                        {loading ? "Loading..." : "Login"}
                     </Button>
                     <p onClick={() => navigate("/register")} className="cursor-pointer text-[14px]">
                         Don't have an account? <span className="font-bold">Create New</span>
