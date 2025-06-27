@@ -6,7 +6,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   const data = await authService.register(req.body);
   res.cookie('token', data.token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: true,
     sameSite: 'None',
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
   });
@@ -17,7 +17,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 export const logoutUser = (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true,
     sameSite: "None",
   });
   return res.status(200).json({ message: "Logged out successfully" });
@@ -29,7 +29,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   const data = await authService.login(req.body);
   res.cookie('token', data.token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV == 'production',
+    secure: true,
     sameSite: 'None',
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
   });
