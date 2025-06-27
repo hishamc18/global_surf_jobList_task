@@ -8,7 +8,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'None',
-    maxAge: 7 * 24 * 60 * 60 * 1000,
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
   });
   res.status(201).json(data.user);
 });
@@ -31,7 +31,7 @@ export const loginUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: process.env.NODE_ENV == 'production',
     sameSite: 'None',
-    maxAge: 7 * 24 * 60 * 60 * 1000,
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
   });
   res.status(200).json(data.user);
 });
