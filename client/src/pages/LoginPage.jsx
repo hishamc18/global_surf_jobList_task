@@ -30,7 +30,7 @@ const LoginPage = () => {
             <AuthAside />
 
             {/* Right Side */}
-            <div className="flex items-center justify-center px-6 md:py-12">
+            <div className="flex items-center justify-center px-6 py-12">
                 <form
                     onSubmit={handleSubmit}
                     className="w-full max-w-md space-y-6 bg-white p-8 rounded-xl border border-gray-200 shadow-sm"
