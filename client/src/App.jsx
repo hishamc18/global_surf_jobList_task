@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardJob from './pages/DashboardJob';
 import { loadUser } from './features/auth/authSlice';
+import NotFoundPage from './components/NotFoundPage';
 
 const AppRoutes = () => {
   const { user } = useSelector((state) => state.auth);
@@ -24,6 +25,7 @@ const AppRoutes = () => {
       <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/dashboard" />} />
       <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to="/dashboard" />} />
       <Route path="/dashboard" element={!user ? <Navigate to="/login" /> : <DashboardJob />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };

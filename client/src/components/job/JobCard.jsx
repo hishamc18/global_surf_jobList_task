@@ -7,7 +7,7 @@ const JobCard = ({ job, onClick }) => {
 
   return (
     <div
-      className="relative bg-white w-full min-h-[220px] flex flex-col justify-between border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-200 cursor-pointer"
+      className="relative bg-white w-full min-h-[220px] flex flex-col justify-between border border-gray-300 rounded-2xl p-5 shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-200 cursor-pointer"
       onClick={() => onClick(job)}
     >
       {/* Three Dot Menu */}

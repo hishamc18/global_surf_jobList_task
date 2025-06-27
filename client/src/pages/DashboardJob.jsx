@@ -25,7 +25,7 @@ const DashboardJob = () => {
 
     if (loading) {
         return (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+            <div className="fixed h-screen inset-0 z-50 flex items-center justify-center bg-white">
                 <LoadingDots />
             </div>
         );
@@ -39,7 +39,7 @@ const DashboardJob = () => {
             {/* Page Content */}
             <div className="px-6 py-10">
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-3xl font-bold text-black">Job Listings</h2>
+                    <h2 className="text-3xl font-bold text-black">Jobs</h2>
                     <CreateJobDrawer />
                 </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const LoadingDots = () => {
   return (
-    <div className="flex items-center justify-center space-x-2 h-20">
+    <div className="flex items-center h-screen justify-center space-x-2 h-20">
       {[...Array(5)].map((_, i) => (
         <span
           key={i}
