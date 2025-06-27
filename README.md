@@ -1,5 +1,7 @@
 ---
 
+Live: https://jobseek-ochre.vercel.app/login
+
 ## 🚀 Features Implemented
 
 ### ✅ Task Requirements
@@ -39,14 +41,11 @@
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/hishamc18/global_surf_jobList_task.git
 cd global_surf_jobList_task
-````
 
 ### 2. Install Dependencies
 
-```bash
 # For frontend
 cd client
 npm install
@@ -54,27 +53,13 @@ npm install
 # For backend
 cd ../server
 npm install
-```
-
-### 3. Environment Setup
-
-Create a `.env` file inside the `server/` folder with the following:
-
-```
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-```
 
 ### 4. Run the Application
 
-```bash
-# Start backend
 cd server
 node server.js
 
-# Start frontend
 cd ../client
 npm run dev
-```
 
 ---
