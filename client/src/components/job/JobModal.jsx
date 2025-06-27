@@ -22,7 +22,7 @@ const JobModal = ({ job, user, onClose, onDelete }) => {
           &times;
         </button>
 
-        <div className="space-y-6 max-h-[80vh] overflow-y-auto pr-2">
+        <div className="space-y-6 max-h-[80vh] overflow-y-auto pr-2 scrollbar-hidden">
           {/* Title */}
           <h2 className="text-3xl font-bold text-gray-900">{job.title}</h2>
           
@@ -42,7 +42,7 @@ const JobModal = ({ job, user, onClose, onDelete }) => {
           </div>
 
           {/* Description */}
-          <div className="text-sm text-gray-700 border border-gray-200 rounded-md p-4 bg-gray-50 max-h-[40vh] overflow-y-auto whitespace-pre-line break-words leading-relaxed">
+          <div className="text-sm text-gray-700 border border-gray-200 rounded-md p-4 bg-gray-50 max-h-[40vh] overflow-y-auto scrollbar-hidden whitespace-pre-line break-words leading-relaxed">
             {job.description}
           </div>
 
