@@ -9,18 +9,22 @@ import NotFoundPage from './components/NotFoundPage';
 import LoadingDots from './components/LoadingDots';
 
 const AppRoutes = () => {
-  const { user, loading } = useSelector((state) => state.auth);
+  const { user, loadingUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const location = useLocation();
 
-  useEffect(() => {
-    const isPublic = ["/login", "/register"].includes(location.pathname);
-    if (!isPublic) {
-      dispatch(loadUser());
-    }
-  }, [dispatch, location.pathname]);
+useEffect(() => {
+  const isPublic = ["/login", "/register"].includes(location.pathname);
 
-    if (loading) {
+  if (!isPublic) {
+    dispatch(loadUser());
+  } else {
+    dispatch({ type: 'auth/skipLoadUser' });
+  }
+}, [dispatch, location.pathname]);
+
+
+    if (loadingUser) {
     return (
       <div>
         <LoadingDots />

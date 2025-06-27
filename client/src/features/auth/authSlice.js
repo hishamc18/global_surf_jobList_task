@@ -4,6 +4,7 @@ import authService from './authService';
 const initialState = {
     user: null,
     loading: false,
+    loadingUser: true,
     error: null,
 };
 
@@ -15,7 +16,11 @@ export const logout = createAsyncThunk('auth/logout', authService.logout);
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        skipLoadUser: (state) => {
+            state.loadingUser = false;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(login.pending, (state) => {
@@ -43,21 +48,23 @@ const authSlice = createSlice({
                 state.error = action.payload;
             })
             .addCase(loadUser.pending, (state) => {
-                state.loading = true;
+                state.loadingUser = true;
             })
             .addCase(loadUser.fulfilled, (state, action) => {
-                state.loading = false;
                 state.user = action.payload;
+                state.loadingUser = false;
             })
             .addCase(loadUser.rejected, (state, action) => {
-                state.loading = false;
                 state.user = null;
+                state.loadingUser = false;
                 state.error = action.payload;
             })
+
             .addCase(logout.fulfilled, (state) => {
                 state.user = null;
-        });
+            });
     },
 });
 
+export const { skipLoadUser } = authSlice.actions;
 export default authSlice.reducer;
