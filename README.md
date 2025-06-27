@@ -12,7 +12,6 @@ Live: https://jobseek-ochre.vercel.app
 - Error handling and user feedback
 - Modern folder structure
 - Clean, readable, and well-commented code
-- `.env` file included for API testing
 
 ### ✅ Additional Features (Implemented within task time)
 - User registration and login
@@ -39,25 +38,25 @@ Live: https://jobseek-ochre.vercel.app
 
 ### 1. Clone the Repository
 
-git clone https://github.com/hishamc18/global_surf_jobList_task.git
-cd global_surf_jobList_task
+- git clone https://github.com/hishamc18/global_surf_jobList_task.git
+- cd global_surf_jobList_task
 
 ### 2. Install Dependencies
 
 # For frontend
-cd client
-npm install
+- cd client
+- npm install
 
 # For backend
-cd ../server
-npm install
+- cd ../server
+- npm install
 
 ### 4. Run the Application
 
-cd server
-node server.js
+- cd server
+- node server.js
 
-cd ../client
-npm run dev
+- cd ../client
+- npm run dev
 
 ---
