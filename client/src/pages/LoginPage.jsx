@@ -35,7 +35,7 @@ const LoginPage = () => {
                     onSubmit={handleSubmit}
                     className="w-full max-w-md space-y-6 bg-white p-8 rounded-xl border border-gray-200 shadow-sm"
                 >
-                    <h2 className="text-3xl font-bold text-center text-black mb-14">Login to JobSeek</h2>
+                    <h2 className="text-2xl font-bold text-center text-black mb-14">Login to JobSeek</h2>
 
                     {/* Email Field */}
                     <div className="space-y-1">
