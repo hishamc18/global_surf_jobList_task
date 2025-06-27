@@ -6,9 +6,10 @@ import RegisterPage from './pages/RegisterPage';
 import DashboardJob from './pages/DashboardJob';
 import { loadUser } from './features/auth/authSlice';
 import NotFoundPage from './components/NotFoundPage';
+import LoadingDots from './components/LoadingDots';
 
 const AppRoutes = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user, loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -18,6 +19,14 @@ const AppRoutes = () => {
       dispatch(loadUser());
     }
   }, [dispatch, location.pathname]);
+
+    if (loading) {
+    return (
+      <div>
+        <LoadingDots />
+      </div>
+    );
+  }
 
   return (
     <Routes>
