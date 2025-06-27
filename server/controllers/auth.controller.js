@@ -8,7 +8,9 @@ export const registerUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: 'None',
-    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    path: "/",
+    domain: 'https://jobseek-ochre.vercel.app'
   });
   res.status(201).json(data.user);
 });
@@ -19,6 +21,7 @@ export const logoutUser = (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    
   });
   return res.status(200).json({ message: "Logged out successfully" });
 };
@@ -31,7 +34,9 @@ export const loginUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: 'None',
-    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    path: "/",
+    domain: 'https://jobseek-ochre.vercel.app'
   });
   res.status(200).json(data.user);
 });
