@@ -1,4 +1,4 @@
-Live: https://jobseek-ochre.vercel.app/login
+Live: https://jobseek-ochre.vercel.app
 
 ## 🚀 Features Implemented
 
