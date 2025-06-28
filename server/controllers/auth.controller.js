@@ -12,6 +12,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     sameSite: 'none',
     expires: tokenExpire,
     path: "/",
+    partitioned: true 
   });
   res.status(201).json(data.user);
 });
@@ -39,6 +40,7 @@ export const loginUser = asyncHandler(async (req, res) => {
     sameSite: 'none',
     expires: tokenExpire,
     path: "/",
+    partitioned: true 
   });
   res.status(200).json(data.user);
 });
