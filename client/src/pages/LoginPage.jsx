@@ -6,7 +6,6 @@ import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 import ErrorMessage from "../components/ErrorMessage";
 import { useNavigate } from "react-router-dom";
-import LoadingDots from "@/components/LoadingDots";
 import AuthAside from "@/components/AuthAside";
 
 const LoginPage = () => {

@@ -16,11 +16,7 @@ export const logout = createAsyncThunk('auth/logout', authService.logout);
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {
-        skipLoadUser: (state) => {
-            state.loadingUser = false;
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(login.pending, (state) => {
@@ -66,5 +62,4 @@ const authSlice = createSlice({
     },
 });
 
-export const { skipLoadUser } = authSlice.actions;
 export default authSlice.reducer;

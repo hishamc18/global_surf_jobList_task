@@ -23,17 +23,22 @@ const register = async (data, thunkAPI) => {
 };
 
 // Load user 
-const loadUser = async (_, thunkAPI) => {
+export const loadUser = async (_, thunkAPI) => {
   try {
     const res = await axiosInstance.get('/auth/me');
     return res.data;
   } catch (err) {
+    const status = err.response?.status;
     const message = err.response?.data?.message || err.message;
+    if (status === 401) {
+      return thunkAPI.rejectWithValue(null);
+    }
     return thunkAPI.rejectWithValue(message);
   }
 };
 
 
+// logout
 const logout = async () => {
   const res = await axiosInstance.post("/auth/logout");
   return res.data;
